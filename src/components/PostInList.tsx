@@ -1,4 +1,5 @@
 import { Post } from "../App";
+import './PostInList.css'
 
 interface PostInListProps {
     post: Post;
@@ -8,7 +9,7 @@ interface PostInListProps {
 export default function PostInList({post, onDelete}: PostInListProps) {
     return (
         <div>
-            <h3>{post.title}</h3>
+            <h2>{post.title}</h2>
             <p>{post.thought}</p>
             <button onClick={() => onDelete(post.id)}>Delete</button>
         </div>

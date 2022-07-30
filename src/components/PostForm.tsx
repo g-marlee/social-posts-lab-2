@@ -1,3 +1,4 @@
+import './PostForm.css';
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
@@ -14,13 +15,12 @@ interface PostFormProps {
 export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
     const [post, setPost] = useState<Post>({title: '', thought: '', id: ''})
 
-    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-        if (e.target.name === "title") {
-            return setPost({...post, id: nanoid(5), title: e.target.value})
-        }
-        if (e.target.name === "thought") {
-            return setPost({...post, id: nanoid(5), thought: e.target.value});
-        }
+    function handleTitleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        return setPost({...post, id: nanoid(5), title: e.target.value});
+    }
+
+    function handleThoughtChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        return setPost({...post, id: nanoid(5), thought: e.target.value});
     }
 
     function handleClose() {
@@ -43,12 +43,14 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
 
     return (
         <>
-            <Modal isOpen={openForm}>
+            <Modal isOpen={openForm} className="modal">
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="title" placeholder='Title' value={post.title} required onChange={handleChange}/>
-                    <input type="text" name='thought' placeholder='Thought' value={post.thought} required onChange={handleChange}/>
-                    <button type='submit'>Post</button>
-                    <button onClick={handleClose}>Close</button>
+                    <label htmlFor="title" className='label'>Title</label>
+                    <input type="text" className='title-input' name="title" placeholder='Title' value={post.title} required onChange={handleTitleChange}/>
+                    <label htmlFor="thought" className='label'>Thought</label>
+                    <textarea className='thought-input' name='thought' placeholder='Thought' value={post.thought} required onChange={handleThoughtChange}/>
+                    <div className='buttons'><button type='submit' className='form-button'>Post</button>
+                    <button onClick={handleClose} className='form-button'>Close</button></div>
                 </form>
             </Modal>
         </>

@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <h1>Tweetbook</h1>
-      <div>
+      <div className='post-container'>
         <SocialPosts />
       </div>
     </div>
