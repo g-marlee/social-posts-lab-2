@@ -1,24 +1,23 @@
 import { useState } from "react";
+import { Post } from "../App";
 import PostForm from "./PostForm";
 
 export default function SocialPosts() {
     const [modalIsOpen, setModalOpen] = useState(false);
+    const [postList, setPostList] = useState<Post[]>([]);
 
-    const createNewPost = () => {
-
+    const createNewPost = (post: Post) => {
+        setPostList([post, ...postList])
+        setModalOpen(false);
     }
 
-    const closeForm = () => {
-
-    }
-    
-    const openForm= () => {
-        setModalOpen(true);
+    function closeForm() {
+        setModalOpen(false);
     }
 
     return (
         <>
-            <button onClick={openForm}>New Thought</button>
+            <button onClick={() => setModalOpen(true)}>New Thought</button>
             <PostForm openForm={modalIsOpen} onSubmit={createNewPost} onClose={closeForm}/>
         </>
     )
