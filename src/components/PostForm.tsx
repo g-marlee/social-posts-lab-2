@@ -45,8 +45,8 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
         <>
             <Modal isOpen={openForm}>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="title" placeholder='Title' value={post.title} onChange={handleChange}/>
-                    <input type="text" name='thought' placeholder='Thought' value={post.thought} onChange={handleChange}/>
+                    <input type="text" name="title" placeholder='Title' value={post.title} required onChange={handleChange}/>
+                    <input type="text" name='thought' placeholder='Thought' value={post.thought} required onChange={handleChange}/>
                     <button type='submit'>Post</button>
                     <button onClick={handleClose}>Close</button>
                 </form>
