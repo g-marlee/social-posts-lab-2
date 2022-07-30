@@ -10,7 +10,7 @@ export default function PostInList({post, onDelete}: PostInListProps) {
         <div>
             <h3>{post.title}</h3>
             <p>{post.thought}</p>
-            <button onClick={() => onDelete(post.id)}></button>
+            <button onClick={() => onDelete(post.id)}>Delete</button>
         </div>
     )
     

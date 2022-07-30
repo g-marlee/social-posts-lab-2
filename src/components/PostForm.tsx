@@ -12,13 +12,7 @@ interface PostFormProps {
 
 
 export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
-    const [modalIsOpen, setModalOpen] = useState(openForm);
     const [post, setPost] = useState<Post>({title: '', thought: '', id: ''})
-
-    function closeModal() {
-        onClose();
-        
-    }
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         if (e.target.name === "title") {
@@ -45,7 +39,7 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
 
     return (
         <>
-            <Modal isOpen={modalIsOpen}>
+            <Modal isOpen={openForm}>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="title" placeholder='Title' value={post.title} onChange={handleChange}/>
                     <input type="text" name='thought' placeholder='Thought' value={post.thought} onChange={handleChange}/>
