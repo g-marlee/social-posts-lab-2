@@ -16,26 +16,30 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         if (e.target.name === "title") {
-            return setPost({...post, title: e.target.value})
+            return setPost({...post, id: nanoid(5), title: e.target.value})
         }
         if (e.target.name === "thought") {
-            return setPost({...post, thought: e.target.value});
+            return setPost({...post, id: nanoid(5), thought: e.target.value});
         }
+    }
+
+    function handleClose() {
+        clearFormValues();
+        onClose();
     }
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        setPost({...post, id: nanoid(5)});
         onSubmit(post);
         clearFormValues();
         onClose();
-        console.log(post)
     }
 
     function clearFormValues() {
         setPost({title: '', thought: '', id: ''});
     }
 
+    Modal.setAppElement('body');
 
     return (
         <>
@@ -44,7 +48,7 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
                     <input type="text" name="title" placeholder='Title' value={post.title} onChange={handleChange}/>
                     <input type="text" name='thought' placeholder='Thought' value={post.thought} onChange={handleChange}/>
                     <button type='submit'>Post</button>
-                    <button onClick={onClose}>Close</button>
+                    <button onClick={handleClose}>Close</button>
                 </form>
             </Modal>
         </>

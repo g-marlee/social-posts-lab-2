@@ -9,7 +9,7 @@ export default function SocialPosts() {
 
     const createNewPost = (post: Post) => {
         setPostList([post, ...postList])
-        setModalOpen(false);
+        closeForm();
     }
 
     function closeForm() {
