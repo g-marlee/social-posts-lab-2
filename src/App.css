@@ -16,7 +16,7 @@ h1 {
     color: #03a9f4
 }
 
-p, h2, h3, h3, button, label, input {
+p, h2, h3, h3, button, label, input, textarea {
     font-family: 'Dosis', sans-serif;
 }
 
