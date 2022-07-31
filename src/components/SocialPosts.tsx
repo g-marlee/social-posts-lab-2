@@ -25,7 +25,7 @@ export default function SocialPosts() {
         <div className='posts-container'>
             <button className='new-post-button' onClick={() => setModalOpen(true)}>New Thought</button>
             <PostForm openForm={modalIsOpen} onSubmit={createNewPost} onClose={closeForm}/>
-            <div className='social-post-container'>
+            <div className={postList.length > 0 ?'social-post-container' : ''}>
                 {postList.map(post => (
                     <PostInList key={post.id} post={post} onDelete={deletePost}/>
                 ))}

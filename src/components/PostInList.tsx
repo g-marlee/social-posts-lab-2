@@ -15,7 +15,7 @@ export default function PostInList({post, onDelete}: PostInListProps) {
                 <h2>{post.title}</h2>
                 <p>{post.thought}</p>
             </div>
-            <button className="delete-button" onClick={() => onDelete(post.id)}><FontAwesomeIcon icon={faTrashCan} size={'lg'} /></button>
+            <button className={"delete-button"}  onClick={() => onDelete(post.id)}><FontAwesomeIcon icon={faTrashCan} size={'lg'} /></button>
         </div>
     )
     
