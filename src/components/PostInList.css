@@ -1,3 +1,23 @@
 h2 {
     font-size: 24px;
+    background-color: white;
+}
+
+p {
+    background-color: white;
+}
+.post-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.text-container {
+    background-color: white;
+}
+
+.delete-button {
+    border: none;
+    background-color: white;
 }
