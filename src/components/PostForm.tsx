@@ -47,13 +47,13 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
     return (
         <>
             <Modal isOpen={openForm} className="modal">
+            <button onClick={handleClose} className='close-button'><FontAwesomeIcon className='icon' icon={faXmarkCircle} size={'lg'} /></button>
                 <form onSubmit={handleSubmit}>
-                    <button onClick={handleClose} className='close-button'><FontAwesomeIcon className='icon' icon={faXmarkCircle} size={'lg'} /></button>
                     <label htmlFor="title" className='label'>Title</label>
                     <input type="text" className='title-input' name="title" placeholder='Title' value={post.title} required onChange={handleTitleChange}/>
                     <label htmlFor="thought" className='label'>Thought</label>
-                    <textarea className='thought-input' name='thought' placeholder='Thought' value={post.thought} required onChange={handleThoughtChange}/>
-                    <button type='submit' className='post-button'>Post</button>
+                    <textarea className='thought-input' name='thought' placeholder="Tell us what you're thinking" value={post.thought} required onChange={handleThoughtChange}/>
+                    <button type='submit' className='post-button'>Add Post</button>
                 </form>
             </Modal>
         </>

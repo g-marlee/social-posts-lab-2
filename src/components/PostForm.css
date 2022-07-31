@@ -23,11 +23,13 @@ form {
 input {
     background-color: white;
     width: 100%;
+    font-size: 14px;
 }
 
 .thought-input {
     height: 120px;
     background-color: white;
+    font-size: 14px;
 }
 
 label {
@@ -39,14 +41,17 @@ label {
 
 .post-button {
     width: 100%;
-    margin: 3px;
+    margin: 0px;
+    margin-top: 4px;
     height: 35px;
+    font-size: 14px;
 }
 
 .close-button {
     border: none;
     background-color: #79c5e8;
     align-self: flex-end;
+    margin-right: 10px;
 }
 
 .icon {
