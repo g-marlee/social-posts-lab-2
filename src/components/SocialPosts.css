@@ -1,0 +1,24 @@
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-post-button {
+    background-color: #03a9f4;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    height: 35px;
+}
+
+.social-post-container {
+    border: solid black 2px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: white;
+    padding-left: 10px;
+}

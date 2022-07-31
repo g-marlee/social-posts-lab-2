@@ -1,3 +1,4 @@
+import './SocialPosts.css';
 import { useState } from "react";
 import { Post } from "../App";
 import PostForm from "./PostForm";
@@ -21,16 +22,16 @@ export default function SocialPosts() {
     }
 
     return (
-        <>
-            <button onClick={() => setModalOpen(true)}>New Thought</button>
+        <div className='posts-container'>
+            <button className='new-post-button' onClick={() => setModalOpen(true)}>New Thought</button>
             <PostForm openForm={modalIsOpen} onSubmit={createNewPost} onClose={closeForm}/>
-            <div>
+            <div className='social-post-container'>
                 {postList.map(post => (
                     <PostInList key={post.id} post={post} onDelete={deletePost}/>
                 ))}
             </div>
 
-        </>
+        </div>
     )
 
 }
