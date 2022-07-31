@@ -10,6 +10,7 @@
     width: 50%;
     height: 45%;
     background-color: #79c5e8;
+    border: solid darkgray 2px;
 }
 
 form {
@@ -46,4 +47,8 @@ label {
     border: none;
     background-color: #79c5e8;
     align-self: flex-end;
+}
+
+.icon {
+    background-color: #79c5e8;
 }
