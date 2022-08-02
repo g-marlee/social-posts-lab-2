@@ -24,3 +24,9 @@ p, h2, h3, h3, button, label, input, textarea {
     background-color: white;
     width: 100%;
 }
+
+@media only screen and (min-width: 600px) {
+    .post-container {
+        width: 60%;
+    }
+}
