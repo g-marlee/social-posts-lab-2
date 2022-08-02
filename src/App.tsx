@@ -7,6 +7,7 @@ export interface Post {
   title: string,
   thought: string,
   id: string,
+  voteCount: number,
 }
 
 function App() {

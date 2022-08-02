@@ -16,7 +16,7 @@ interface PostFormProps {
 
 export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
     
-    const [post, setPost] = useState<Post>({title: '', thought: '', id: ''})
+    const [post, setPost] = useState<Post>({title: '', thought: '', id: '', voteCount: 0})
 
     function handleTitleChange(e: React.ChangeEvent<HTMLInputElement>) {
         return setPost({...post, id: nanoid(5), title: e.target.value});
@@ -39,7 +39,7 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
     }
 
     function clearFormValues() {
-        setPost({title: '', thought: '', id: ''});
+        setPost({...post, title: '', thought: '', id: ''});
     }
 
     Modal.setAppElement('body');
