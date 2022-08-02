@@ -5,10 +5,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding-top: 4px;
+    padding-bottom: 10px;
     justify-content: center;
     align-items: center;
     width: 50%;
-    height: 45%;
+    height: 50%;
     background-color: #79c5e8;
     border: solid darkgray 2px;
 }
@@ -32,6 +34,7 @@ form {
     background-color: white;
     border: solid black 1px;
     font-size: 14px;
+    margin-bottom: 5px;
 }
 
 label {
