@@ -47,7 +47,7 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
     return (
         <>
             <Modal isOpen={openForm} className="modal">
-            <button onClick={handleClose} className='close-button'><FontAwesomeIcon className='icon' icon={faXmarkCircle} size={'lg'} /></button>
+            <button onClick={handleClose} className='close-button'><FontAwesomeIcon className='close-icon' icon={faXmarkCircle} size={'lg'} /></button>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="title" className='label'>Title</label>
                     <input type="text" className='title-input' name="title" placeholder='Title' value={post.title} required onChange={handleTitleChange}/>
