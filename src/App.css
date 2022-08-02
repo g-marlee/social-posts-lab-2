@@ -22,4 +22,5 @@ p, h2, h3, h3, button, label, input, textarea {
 
 .post-container {
     background-color: white;
+    width: 100%;
 }
