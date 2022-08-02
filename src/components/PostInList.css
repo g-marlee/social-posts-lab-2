@@ -17,7 +17,24 @@ p {
     background-color: white;
 }
 
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
 .delete-button {
     border: none;
+    background-color: white;
+}
+
+.vote-button {
+    border: none;
+    background-color: white;
+}
+
+.icon {
     background-color: white;
 }

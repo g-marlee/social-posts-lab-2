@@ -18,10 +18,12 @@ export default function PostInList({post, onDelete}: PostInListProps) {
                 <h2>{post.title}</h2>
                 <p>{post.thought}</p>
             </div>
-            <button className="upvote-button" onClick={() => setPostCount(prevCount => prevCount + 1)}><FontAwesomeIcon icon={faAngleUp} size={'lg'} /></button>
+            <div className="buttons-container">
+            <button className="vote-button" onClick={() => setPostCount(prevCount => prevCount + 1)}><FontAwesomeIcon className="icon" icon={faAngleUp} size={'lg'} /></button>
             <p>{postCount}</p>
-            <button className="downvote-button" onClick={() => setPostCount(prevCount => prevCount - 1)}><FontAwesomeIcon icon={faAngleDown} size={'lg'} /></button>
+            <button className="vote-button" onClick={() => setPostCount(prevCount => prevCount - 1)}><FontAwesomeIcon className="icon" icon={faAngleDown} size={'lg'} /></button>
             <button className={"delete-button"}  onClick={() => onDelete(post.id)}><FontAwesomeIcon icon={faTrashCan} size={'lg'} /></button>
+            </div>
         </div>
     )
     
