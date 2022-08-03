@@ -19,11 +19,11 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
     const [post, setPost] = useState<Post>({title: '', thought: '', id: '', voteCount: 0})
 
     function handleTitleChange(e: React.ChangeEvent<HTMLInputElement>) {
-        return setPost({...post, id: nanoid(5), title: e.target.value});
+        return setPost({...post, title: e.target.value});
     }
 
     function handleThoughtChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-        return setPost({...post, id: nanoid(5), thought: e.target.value});
+        return setPost({...post, thought: e.target.value});
     }
 
     function handleClose() {
@@ -33,7 +33,7 @@ export default function PostForm({openForm, onSubmit, onClose}: PostFormProps) {
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        onSubmit(post);
+        onSubmit({...post, id: nanoid(5)});
         clearFormValues();
         onClose();
     }
